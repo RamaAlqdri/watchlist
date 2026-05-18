@@ -193,6 +193,209 @@ textarea {
     text-align: center;
 }
 
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: min(1120px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
+}
+
+.app-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.app-title:hover {
+    text-decoration: none;
+}
+
+.brand-mark.small {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 0.82rem;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-label {
+    max-width: 180px;
+    overflow: hidden;
+    color: var(--muted);
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 30px auto 48px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.search-form {
+    display: flex;
+    width: min(100%, 520px);
+    gap: 10px;
+}
+
+.search-form input {
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    outline: none;
+}
+
+.search-form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.movie-card {
+    display: grid;
+    grid-template-rows: 220px 1fr;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+}
+
+.poster-wrap {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #111827;
+}
+
+.poster-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.poster-fallback {
+    background: linear-gradient(135deg, #172033 0%, #374151 48%, #1f7668 100%);
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.movie-content {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+}
+
+.movie-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.movie-heading h2 {
+    margin: 0;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.badge.watched {
+    background: rgba(22, 163, 74, 0.14);
+    color: #13723a;
+}
+
+.badge.unwatched {
+    background: rgba(245, 158, 11, 0.17);
+    color: #9a5b00;
+}
+
+.movie-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.movie-description {
+    min-height: 48px;
+    margin: 0;
+    color: #384152;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.movie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-self: end;
+}
+
+.movie-actions .button {
+    min-height: 36px;
+    padding: 8px 11px;
+    font-size: 0.88rem;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 28px;
+    color: var(--muted);
+    text-align: center;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+}
+
 @media (max-width: 520px) {
     .auth-page {
         padding: 16px;
@@ -200,5 +403,25 @@ textarea {
 
     .auth-card {
         padding: 22px;
+    }
+
+    .navbar-inner,
+    .page {
+        width: min(100% - 24px, 1120px);
+    }
+
+    .navbar-inner,
+    .toolbar,
+    .search-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .nav-actions {
+        justify-content: space-between;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
     }
 }

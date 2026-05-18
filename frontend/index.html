@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/movies.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a class="app-title" href="index.html">
+                <span class="brand-mark small">MW</span>
+                <span>Movie Watchlist</span>
+            </a>
+            <div class="nav-actions">
+                <span id="userLabel" class="user-label"></span>
+                <button id="logoutButton" class="button secondary" type="button">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="toolbar">
+            <form id="searchForm" class="search-form">
+                <input id="searchInput" type="search" placeholder="Search title" autocomplete="off">
+                <button class="button secondary" type="submit">Search</button>
+            </form>
+            <a href="movie-form.html" class="button primary">Tambah Movie</a>
+        </section>
+
+        <p id="message" class="message"></p>
+        <section id="movieList" class="movie-grid" aria-live="polite"></section>
+    </main>
+</body>
+</html>
