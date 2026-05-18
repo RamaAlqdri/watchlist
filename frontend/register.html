@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Movie Watchlist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-card">
+            <div class="brand">
+                <span class="brand-mark">MW</span>
+                <div>
+                    <h1>Movie Watchlist</h1>
+                    <p>Buat akun baru</p>
+                </div>
+            </div>
+
+            <form id="registerForm" class="form">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" minlength="3" autocomplete="username" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" minlength="6" autocomplete="new-password" required>
+                </div>
+
+                <p id="message" class="message"></p>
+
+                <button type="submit" class="button primary full-width">Register</button>
+            </form>
+
+            <p class="switch-link">Sudah punya akun? <a href="login.html">Login</a></p>
+        </section>
+    </main>
+</body>
+</html>
