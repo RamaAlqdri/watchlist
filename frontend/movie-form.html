@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Form - Movie Watchlist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/movie-form.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a class="app-title" href="index.html">
+                <span class="brand-mark small">MW</span>
+                <span>Movie Watchlist</span>
+            </a>
+            <div class="nav-actions">
+                <a class="button secondary" href="index.html">Back</a>
+                <button id="logoutButton" class="button secondary" type="button">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page form-page">
+        <section class="form-panel">
+            <div class="form-header">
+                <h1 id="formTitle">Tambah Movie</h1>
+            </div>
+
+            <form id="movieForm" class="form">
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" maxlength="150" required>
+                </div>
+
+                <div class="field">
+                    <label for="genre">Genre</label>
+                    <select id="genre" name="genre" required></select>
+                </div>
+
+                <div class="field">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="rating">Rating</label>
+                        <input id="rating" name="rating" type="number" min="1" max="5" value="5" required>
+                    </div>
+
+                    <label class="checkbox-field" for="watched">
+                        <input id="watched" name="watched" type="checkbox">
+                        <span>Watched</span>
+                    </label>
+                </div>
+
+                <div class="field">
+                    <label for="posterUrl">Poster URL</label>
+                    <input id="posterUrl" name="posterUrl" type="url" maxlength="500">
+                </div>
+
+                <p id="message" class="message"></p>
+
+                <div class="form-actions">
+                    <button class="button primary" type="submit">Simpan</button>
+                    <a class="button secondary" href="index.html">Batal</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
