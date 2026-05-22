@@ -1,6 +1,6 @@
 # Movie Watchlist
 
-Movie Watchlist adalah aplikasi fullstack sederhana untuk mengelola daftar film pribadi. Backend menggunakan Java 21, Spring Boot 3.x, Spring Security, JWT Authentication, Spring Data JPA, PostgreSQL, Maven, Bean Validation, dan BCrypt. Frontend menggunakan HTML, CSS, Vanilla JavaScript, Fetch API, dan LocalStorage untuk menyimpan JWT.
+Movie Watchlist adalah aplikasi fullstack sederhana untuk mengelola daftar film pribadi. Backend menggunakan Java 21, Spring Boot 3.x, Spring Security, simple token authentication, Spring Data JPA, PostgreSQL, Maven, Bean Validation, BCrypt, dan Lombok. Frontend menggunakan HTML, CSS, Vanilla JavaScript, Fetch API, dan LocalStorage untuk menyimpan token login.
 
 ## Struktur Project
 
@@ -49,7 +49,7 @@ git add .
 git commit -m "feat: add dto validation and exception handling"
 
 git add .
-git commit -m "feat: implement jwt authentication"
+git commit -m "feat: implement simple token authentication"
 
 git add .
 git commit -m "feat: implement movie crud api"
@@ -101,8 +101,6 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-app.jwt.secret=movie-watchlist-super-secret-key-for-hmac-sha256-authentication
-app.jwt.expiration=86400000
 ```
 
 ## Menjalankan Backend
@@ -284,19 +282,19 @@ WAR
 1. Buka `register.html`, isi name, username, dan password.
 2. Setelah register berhasil, user diarahkan ke `login.html`.
 3. Login memakai username dan password.
-4. Frontend menyimpan JWT di LocalStorage.
+4. Frontend menyimpan token login di LocalStorage.
 5. Buka dashboard `index.html` untuk melihat daftar movie milik user login.
 6. Klik `Tambah Movie`, pilih genre dari dropdown, isi rating 1 sampai 5, lalu simpan.
 7. Gunakan search untuk mencari movie berdasarkan title.
 8. Klik `Edit` untuk mengubah movie milik user login.
 9. Klik `Mark Watched` atau `Mark Unwatched` untuk toggle status.
 10. Klik `Delete` untuk menghapus movie.
-11. Klik `Logout` untuk menghapus JWT dari LocalStorage.
+11. Klik `Logout` untuk menghapus token dari LocalStorage.
 
 ## Bagian Penting
 
 - Password user di-hash menggunakan BCrypt sebelum disimpan.
-- JWT subject menggunakan `username`.
+- Token login dibuat saat register atau login, lalu disimpan sementara di memory backend.
 - Entity `Movie.genre` memakai enum `MovieGenre` dan disimpan sebagai string dengan `@Enumerated(EnumType.STRING)`.
 - Query movie selalu memakai kombinasi `movie id` dan `current user`, sehingga user tidak bisa membaca, mengubah, atau menghapus movie milik user lain.
 - Search hanya berdasarkan `title`.

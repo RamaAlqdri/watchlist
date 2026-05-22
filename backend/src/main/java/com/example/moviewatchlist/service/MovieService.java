@@ -8,6 +8,7 @@ import com.example.moviewatchlist.exception.ForbiddenException;
 import com.example.moviewatchlist.exception.ResourceNotFoundException;
 import com.example.moviewatchlist.repository.MovieRepository;
 import com.example.moviewatchlist.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MovieService {
 
     private final MovieRepository movieRepository;
     private final UserRepository userRepository;
-
-    public MovieService(MovieRepository movieRepository, UserRepository userRepository) {
-        this.movieRepository = movieRepository;
-        this.userRepository = userRepository;
-    }
 
     @Transactional(readOnly = true)
     public List<MovieResponse> getMovies(String search) {
