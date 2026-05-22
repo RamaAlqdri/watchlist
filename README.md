@@ -1,6 +1,6 @@
-# Movie Watchlist
+# MyWatchlist
 
-Movie Watchlist adalah aplikasi fullstack sederhana untuk mengelola daftar film pribadi. Backend menggunakan Java 21, Spring Boot 3.x, Spring Security, simple token authentication, Spring Data JPA, PostgreSQL, Maven, Bean Validation, BCrypt, dan Lombok. Frontend menggunakan HTML, CSS, Vanilla JavaScript, Fetch API, dan LocalStorage untuk menyimpan token login.
+MyWatchlist adalah aplikasi fullstack sederhana untuk mengelola daftar film pribadi. Backend menggunakan Java 21, Spring Boot 3.x, Spring Security, simple token authentication, Spring Data JPA, PostgreSQL, Maven, Bean Validation, BCrypt, dan Lombok. Frontend menggunakan HTML, CSS, Vanilla JavaScript, Fetch API, dan LocalStorage untuk menyimpan token login.
 
 ## Struktur Project
 

@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>movie-watchlist</artifactId>
+    <artifactId>mywatchlist</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Movie Watchlist</name>
-    <description>Fullstack Movie Watchlist API with Spring Boot and simple token authentication</description>
+    <name>MyWatchlist</name>
+    <description>Fullstack MyWatchlist API with Spring Boot and simple token authentication</description>
 
     <properties>
         <java.version>21</java.version>

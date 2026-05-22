@@ -1,6 +1,6 @@
 const API_BASE_URL = 'http://localhost:8080/api';
-const TOKEN_KEY = 'movie_watchlist_token';
-const USER_KEY = 'movie_watchlist_user';
+const TOKEN_KEY = 'mywatchlist_token';
+const USER_KEY = 'mywatchlist_user';
 
 function getToken() {
     return localStorage.getItem(TOKEN_KEY);
